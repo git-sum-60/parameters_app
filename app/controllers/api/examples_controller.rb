@@ -19,7 +19,7 @@ class Api::ExamplesController < ApplicationController
 
   def guess
     user_guess = params[:user_guess].to_i
-
+    
     # figure out what the real answer is
     answer = 40
     # if the number is above that, let the user know
@@ -32,7 +32,11 @@ class Api::ExamplesController < ApplicationController
     end
     # if the number is below, let the user know
     # if they get it right, let the user know
-    
     render 'estimate.json.jb'
+  end
+
+  def segment
+    p params[:first_name].reverse
+    render 'segment_param.json.jb'
   end
 end
