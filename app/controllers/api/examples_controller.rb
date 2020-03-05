@@ -39,4 +39,20 @@ class Api::ExamplesController < ApplicationController
     p params[:first_name].reverse
     render 'segment_param.json.jb'
   end
+
+  def guess_segment
+    user_guess = params[:user_input].to_i
+    
+    # figure out what the real answer is
+    answer = 40
+    # if the number is above that, let the user know
+    if user_guess > answer
+      @message = "you guessed too high"
+    elsif user_guess < answer
+      @message = "you guesseed too low"
+    else
+      @message = "you win"
+    end
+    render 'guess_a_number_segment.json.jb'
+  end
 end

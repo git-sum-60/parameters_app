@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     get "/guess_a_number" => "examples#guess"
 
     get "/url_segment_parameter/:first_name" => "examples#segment"
+
+    get "/guess_segment/:user_input" => "examples#guess_segment"
   end
 end
