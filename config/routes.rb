@@ -11,5 +11,7 @@ Rails.application.routes.draw do
     get "/url_segment_parameter/:first_name" => "examples#segment"
 
     get "/guess_segment/:user_guess" => "examples#guess"
+
+    post "/body_params" => "examples#body_parameters"
   end
 end

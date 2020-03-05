@@ -39,4 +39,9 @@ class Api::ExamplesController < ApplicationController
     p params[:first_name].reverse
     render 'segment_param.json.jb'
   end
+
+  def body_parameters
+    @first_name = params[:name]
+    render 'body_params.json.jb'
+  end
 end
